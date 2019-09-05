@@ -3,6 +3,14 @@ export interface Partenaire {
     raisonSociale: string,
     ninea: string,
     statut: string,
-    users: [],
-    comptes: []
+    profil: number,
+    username: string,
+    password: string,
+    prenom: string,
+    nom: string,
+    telephone: string,
+    adresse: string,
+    email: string,
+    solde: number,
+    montant: number
 }

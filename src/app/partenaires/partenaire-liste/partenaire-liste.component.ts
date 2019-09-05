@@ -13,6 +13,7 @@ export class PartenaireListeComponent implements OnInit {
 
   ngOnInit() {
     this.getPart();
+    //this.partService.refreshList();
   }
 
   getPart(){
