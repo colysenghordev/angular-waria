@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-warima';
+
+  constructor(private authService:AuthService){}
+
+  isAdmin(){
+    return this.authService.isAdmin();
+  }
+
+  isPartenaire(){
+    return this.authService.isPartenaire();
+  }
+
+  isAuthenticated(){
+    return this.authService.isAuthenticated();
+  }
+
 }
+

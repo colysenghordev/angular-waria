@@ -1,21 +1,69 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Warima</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/partenaire" routerLinkActive="active">Partenaire</a>
-      </li>
-    </ul>
-    <ul class="navbar-nav">
-        <a class="nav-link"  routerLink="/login" routerLinkActive="active">Login</a>
-        <a class="nav-link"  routerLink="/register" routerLinkActive="active">Register</a>        
-    </ul>
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+      data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
   </div>
-</nav>   
 
-<router-outlet></router-outlet>            
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" routerLink="/" routerLinkActive="active">
+        Home
+      </a>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link" routerLink="/admin-général" routerLinkActive="active">
+          Admin-Général
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" routerLink="/register" routerLinkActive="active">
+            Ajout Partenaire
+          </a>
+          <a class="navbar-item" routerLink="/lister-partenaire" routerLinkActive="active">
+            Lister Partenaire
+          </a>
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link" routerLink="/partenaire" routerLinkActive="active">
+          Partenaire
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            Ajout user-simple
+          </a>
+          <a class="navbar-item">
+            Lister user-simple
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary" routerLink="/login" routerLinkActive="active">
+            <strong>S'authentifier</strong>
+          </a>
+          <a class="button is-light" style="background-color: red" (click)="authService.logout()">
+            Déconnexion
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<footer class="footer">
+  <div class="container has-text-centered">
+    <div class="content">
+      <br> <br>
+      <p style="font-style: italic; color:navy; font-weight:bold">Pour le Sénégal avec ❤️</p>
+    </div>
+  </div>
+</footer>
