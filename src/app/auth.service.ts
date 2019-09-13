@@ -12,16 +12,13 @@ export class AuthService {
   // tslint:disable-next-line: variable-name
   private _loginUrl = 'http://localhost:8000/api/login_check';
 
-  roles: Array<string>;
+  roles: string;
   jwt: string;
   username: string;
   indexOf: any;
 
   constructor(private http: HttpClient, private router:Router) { }
 
-  /*isAuthenticated() {
-    return !!localStorage.getItem(this.TOKEN_KEY);
-  }*/
 
   login(user: {}) {
     var headers = new HttpHeaders().set("Authorization", "Bearer " + localStorage.getItem('token'));
@@ -41,15 +38,13 @@ export class AuthService {
     this.roles = objJWT.roles;
   }
 
-  /* isAuthenticated() {
-    return this.roles && (this.isAdmin() || this.isPartenaire());
-  }*/
-
   isAdmin() {
+    this.roles=localStorage.getItem("roles");
     return this.roles.indexOf('ROLE_Super-Admin') >= 0;
   }
 
   isPartenaire() {
+    this.roles=localStorage.getItem("roles");
     return this.roles.indexOf('ROLE_Partenaire') >= 0;
   }
 

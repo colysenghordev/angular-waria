@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   helper = new JwtHelperService();
   accountData: any;
   authService: any;
-  roles: Array<string>;
+  roles: String;
 
   // tslint:disable-next-line: variable-name
   constructor(private _auth: AuthService, private fb: FormBuilder, private router: Router) {
@@ -55,22 +55,13 @@ export class LoginComponent implements OnInit {
   }
 
   private newMethod() {
-    //this.router.navigate(["/"]);
-    if (this.roles = ["ROLE_Super-Admin"]) {
+    this.roles=localStorage.getItem("roles");
+    if (this.roles =="ROLE_Super-Admin" ) {
       this.router.navigate(["/admin-général"]);
     }
-    else if (this.roles = ["ROLE_Partenaire"]) {
+    else if (this.roles == "ROLE_Partenaire") {
       this.router.navigate(["/partenaire"])
     }
   }
-
-  isAdmin() {
-    return this.authService.isAdmin();
-  }
-
-  isPartenaire() {
-    return this.authService.isPartenaire();
-  }
-
 
 }

@@ -15,7 +15,7 @@
       <a class="navbar-item" routerLink="/home" routerLinkActive="active">
         Accueil
       </a>
-      <div class="navbar-item has-dropdown is-hoverable" *ngIf="isAuthenticated()">
+      <div class="navbar-item has-dropdown is-hoverable" *ngIf="isAuthenticated() && isAdmin()">
         <a class="navbar-link" routerLink="/admin-général" routerLinkActive="active">
           Admin-Général
         </a>
@@ -28,7 +28,7 @@
           </a>
         </div>
       </div>
-      <div class="navbar-item has-dropdown is-hoverable" *ngIf="isAuthenticated()">
+      <div class="navbar-item has-dropdown is-hoverable" *ngIf="isAuthenticated() && isPartenaire()">
         <a class="navbar-link" routerLink="/partenaire" routerLinkActive="active">
           Partenaire
         </a>

@@ -12,8 +12,6 @@ export class AppComponent {
   constructor(private authService:AuthService){}
 
   isAuthenticated(){
-    /* console.log(this.authService.isAuthenticated())
-    return this.authService.isAuthenticated(); */
     if(localStorage.getItem("token")){
       return true;
     }
@@ -21,11 +19,11 @@ export class AppComponent {
   }
 
   isAdmin(){
-    return this.authService.isAdmin();
+   return this.authService.isAdmin();
   }
 
   isPartenaire(){
-    return this.authService.isPartenaire();
+   return this.authService.isPartenaire();
   }
 
   logOut(){
