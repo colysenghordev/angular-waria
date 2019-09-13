@@ -1,6 +1,6 @@
 <div class="jumbtron">
-  <h3 class="display-4 text-center">Warima</h3>
-  <hr>
+  <h5 class="display-4 text-center">Warima</h5>
+ 
   <div class="row">
     <div class="col-md-5">
 
@@ -13,7 +13,7 @@
 
 <section class="hero">
     <div class="hero-body has-text-centered">
-      <form autocomplete="off">
+      <form autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
         <div class="columns">
           <div class="column"></div>
   

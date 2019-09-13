@@ -1,21 +1,21 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar is-light" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
 
     <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
       data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
+      <span aria-hidden="false"></span>
+      <span aria-hidden="false"></span>
+      <span aria-hidden="false"></span>
     </a>
   </div>
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" routerLink="/" routerLinkActive="active">
-        Home
+      <a class="navbar-item" routerLink="/home" routerLinkActive="active">
+        Accueil
       </a>
-      <div class="navbar-item has-dropdown is-hoverable">
+      <div class="navbar-item has-dropdown is-hoverable" *ngIf="isAuthenticated()">
         <a class="navbar-link" routerLink="/admin-général" routerLinkActive="active">
           Admin-Général
         </a>
@@ -28,7 +28,7 @@
           </a>
         </div>
       </div>
-      <div class="navbar-item has-dropdown is-hoverable">
+      <div class="navbar-item has-dropdown is-hoverable" *ngIf="isAuthenticated()">
         <a class="navbar-link" routerLink="/partenaire" routerLinkActive="active">
           Partenaire
         </a>
@@ -45,12 +45,13 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary" routerLink="/login" routerLinkActive="active">
-            <strong>S'authentifier</strong>
+          <a class="button is-primary" routerLink="/login" *ngIf="!isAuthenticated()">
+            <strong>Se Connecter</strong>
           </a>
-          <a class="button is-light" style="background-color: red" (click)="authService.logout()">
-            Déconnexion
+          <a class="button is-danger" (click)="logOut()" *ngIf="isAuthenticated()">
+            <strong>Déconnexion</strong>
           </a>
+          
         </div>
       </div>
     </div>

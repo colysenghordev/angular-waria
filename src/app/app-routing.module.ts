@@ -5,10 +5,12 @@ import { PartenaireListeComponent } from './partenaires/partenaire-liste/partena
 import { CreatePartenaireComponent } from './partenaires/create-partenaire/create-partenaire.component';
 import { AdmingeneralComponent } from './admin/admingeneral/admingeneral.component';
 import { PartenaireComponent } from './adminpartenaire/partenaire/partenaire.component';
+import { HomeComponent } from './home/home/home.component';
 
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'login'},
+  { path: '', pathMatch: 'full', redirectTo: ''},
+  { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'lister-partenaire', component: PartenaireListeComponent },
   { path: 'register', component: CreatePartenaireComponent },

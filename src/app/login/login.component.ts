@@ -13,11 +13,14 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup;
 
+  jwt: string;
+
   loginUserData = {};
 
   helper = new JwtHelperService();
   accountData: any;
   authService: any;
+  roles: Array<string>;
 
   // tslint:disable-next-line: variable-name
   constructor(private _auth: AuthService, private fb: FormBuilder, private router: Router) {
@@ -30,11 +33,11 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    localStorage.clear()
   }
 
   loginUser() {
-    this._auth.loginUrl(this.loginUserData)
+    this._auth.login(this.loginUserData)
       .subscribe(
         res => {
           const token = res.token;
@@ -52,10 +55,14 @@ export class LoginComponent implements OnInit {
   }
 
   private newMethod() {
+    //this.router.navigate(["/"]);
+    if (this.roles = ["ROLE_Super-Admin"]) {
       this.router.navigate(["/admin-général"]);
-      this.router.navigate(["/partenaire"]);
     }
-    
+    else if (this.roles = ["ROLE_Partenaire"]) {
+      this.router.navigate(["/partenaire"])
+    }
+  }
 
   isAdmin() {
     return this.authService.isAdmin();
