@@ -16,6 +16,8 @@ import { AdmingeneralComponent } from './admin/admingeneral/admingeneral.compone
 import { PartenaireComponent } from './adminpartenaire/partenaire/partenaire.component';
 
 import { HomeComponent } from './home/home/home.component';
+import { MaterialModule} from'./material/material.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,7 @@ import { HomeComponent } from './home/home/home.component';
     CreatePartenaireComponent,
     AdmingeneralComponent,
     PartenaireComponent,
-    HomeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { HomeComponent } from './home/home/home.component';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    MaterialModule
   ],
   providers: [
     AuthService,

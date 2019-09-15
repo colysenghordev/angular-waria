@@ -1,4 +1,56 @@
-<div class="container pt-5">
+<!--========================Angular Material Tutorial - Data table=========================-->
+
+<mat-form-field > 
+  <input  matInput (keyup)="applyFilter($event.target.value)" placeholder = "Recherche"> 
+</mat-form-field >
+
+<div class="mat-elevation-z8">
+<mat-table [dataSource]="dataSource" matSort>
+    <!-- ID  Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell mat-sort-header *matHeaderCellDef> ID </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+    </ng-container>
+  
+    <!-- Raison_sociale Column -->
+    <ng-container matColumnDef="raisonSociale">
+      <mat-header-cell mat-sort-header *matHeaderCellDef>Raison_sociale</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.raisonSociale}} </mat-cell>
+    </ng-container>
+  
+    <!-- Ninea Column -->
+    <ng-container matColumnDef="ninea">
+      <mat-header-cell mat-sort-header *matHeaderCellDef> Ninea </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.ninea}} </mat-cell>
+    </ng-container>
+  
+    <!-- Statut Column -->
+    <ng-container matColumnDef="statut">
+      <mat-header-cell mat-sort-header *matHeaderCellDef> Statut </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.statut}} </mat-cell>
+    </ng-container>
+
+    <!-- User Column -->
+    <ng-container matColumnDef="users">
+      <mat-header-cell mat-sort-header *matHeaderCellDef> User </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.users}} </mat-cell>
+    </ng-container>
+
+    <!-- Compte Column -->
+    <ng-container matColumnDef="comptes">
+      <mat-header-cell mat-sort-header *matHeaderCellDef> Compte </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.comptes}} </mat-cell>
+    </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+
+<!--========================Tableau boostrap pour lister=========================-->
+
+  <!--<div class="container pt-5">
     <div class="row">
         <div class="col-12">
             <table class="table table-dark">
@@ -25,4 +77,4 @@
             </table>
         </div>
     </div>
-</div>
+</div>-->

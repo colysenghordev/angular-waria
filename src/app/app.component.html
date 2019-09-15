@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<nav class="navbar is-light" role="navigation" aria-label="main navigation">
+<nav class="navbar is-info" role="navigation" aria-label="main navigation" style="background-color: #2F4F4F">
   <div class="navbar-brand">
 
     <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
@@ -12,7 +12,7 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" routerLink="/home" routerLinkActive="active">
+      <a class="navbar-item" routerLink="/home" routerLinkActive="active" style="color: aqua">
         Accueil
       </a>
       <div class="navbar-item has-dropdown is-hoverable" *ngIf="isAuthenticated() && isAdmin()">
@@ -46,7 +46,7 @@
       <div class="navbar-item">
         <div class="buttons">
           <a class="button is-primary" routerLink="/login" *ngIf="!isAuthenticated()">
-            <strong>Se Connecter</strong>
+            <strong>Connexion</strong>
           </a>
           <a class="button is-danger" (click)="logOut()" *ngIf="isAuthenticated()">
             <strong>Déconnexion</strong>
@@ -60,11 +60,11 @@
 
 <router-outlet></router-outlet>
 
-<footer class="footer">
+<footer class="footer" style="background-color: #2F4F4F">
   <div class="container has-text-centered">
     <div class="content">
       <br> <br>
-      <p style="font-style: italic; color:navy; font-weight:bold">Pour le Sénégal avec ❤️</p>
+      <p style="font-style: italic; color:#DCDCDC; font-weight:bold">Pour le Sénégal avec ❤️</p>
     </div>
   </div>
 </footer>

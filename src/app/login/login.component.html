@@ -1,53 +1,47 @@
 <div class="jumbtron">
-  <h5 class="display-4 text-center">Warima</h5>
- 
-  <div class="row">
-    <div class="col-md-5">
-
-    </div>
-    <div class="col-md-7">
-
+  <div class="display-4 text-center">
+    <div class="rond">
+      <p class="war">WARIMA</p>
     </div>
   </div>
 </div>
 
 <section class="hero">
-    <div class="hero-body has-text-centered">
-      <form autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
-        <div class="columns">
-          <div class="column"></div>
-  
-          <div class="column is-3">
-            <div class="field">
-              <label class="label is-pulled-left">Username:</label>
-              <div class="control">
-                <input class="input" type="text" [(ngModel)]="loginUserData.username" name="username">
-              </div>
-            </div>
-          </div>
-  
-          <div class="column"></div>
-        </div>
-  
-        <div class="columns">
-          <div class="column"></div>
-  
-          <div class="column is-3">
-            <div class="field">
-              <label class="label is-pulled-left">Password:</label>
-              <div class="control">
-                <input class="input" type="password" [(ngModel)]="loginUserData.password" name="password">
-              </div>
-  
-              <br>
-              <br>
-              <a class="button is-primary is-medium is-fullwidth" (click)='loginUser()'>Soumettre</a>
-            </div>
-          </div>
-  
-          <div class="column"></div>
-        </div>
-      </form>
-    </div>
-  </section>
+  <div class="hero-body has-text-centered">
+    <form autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+      <div class="columns">
+        <div class="column"></div>
 
+        <div class="column is-3">
+          <div class="field">
+            <label class="label is-pulled-left">Username:</label>
+            <div class="control">
+              <input class="input" type="text" [(ngModel)]="loginUserData.username" name="username">
+            </div>
+          </div>
+        </div>
+
+        <div class="column"></div>
+      </div>
+
+      <div class="columns">
+        <div class="column"></div>
+
+        <div class="column is-3">
+          <div class="field">
+            <label class="label is-pulled-left">Password:</label>
+            <div class="control">
+              <input class="input" type="password" [(ngModel)]="loginUserData.password" name="password">
+            </div>
+
+            <br>
+            <br>
+            <a class="button is-primary is-medium is-fullwidth" (click)='loginUser()'>Soumettre</a>
+          </div>
+        </div>
+
+        <div class="column"></div>
+      </div>
+    </form>
+  </div>
+</section>
